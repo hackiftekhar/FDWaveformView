@@ -20,11 +20,34 @@
 /// The audio file to render
 @property (nonatomic, strong) NSURL *audioURL;
 
+/****************************************************************/
+
 /// The total number of audio samples in the file
 @property (nonatomic, assign, readonly) long int totalSamples;
 
+/// The color of the waveform
+@property (nonatomic, copy) UIColor *wavesColor;
+
+/****************************************************************/
+
 /// A portion of the waveform rendering to be highlighted
 @property (nonatomic, assign) long int progressSamples;
+
+/// The color of the highlighted waveform (see `progressSamples`
+@property (nonatomic, copy) UIColor *progressColor;
+
+/****************************************************************/
+
+/// The color of the cropped waveform
+@property (nonatomic, copy) UIColor *cropColor;
+
+/// crop start samples
+@property (nonatomic, assign) long int cropStartSamples;
+
+/// crop end samples
+@property (nonatomic, assign) long int cropEndSamples;
+
+/****************************************************************/
 
 /// The first sample to render
 @property (nonatomic, assign) long int zoomStartSamples;
@@ -41,11 +64,6 @@
 /// Whether to allow the scroll gesture
 @property (nonatomic) BOOL doesAllowScroll;
 
-/// The color of the waveform
-@property (nonatomic, copy) UIColor *wavesColor;
-
-/// The corol of the highlighted waveform (see `progressSamples`
-@property (nonatomic, copy) UIColor *progressColor;
 @end
 
 /// To receive progress updates from FDWaveformView
